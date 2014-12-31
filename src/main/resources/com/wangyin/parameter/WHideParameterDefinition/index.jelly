@@ -1,0 +1,10 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
+	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form"
+	xmlns:i="jelly:fmt" xmlns:p="/lib/hudson/project">
+	<f:block>
+		<div name="parameter">
+			<input type="hidden" name="name" value="${it.name}" />
+			<input type="hidden" name="value" value="${it.defaultValue}" />
+		</div>
+	</f:block>
+</j:jelly>
