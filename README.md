@@ -8,7 +8,7 @@ hidden-parameter-plugin
 		4. After the build, parameter list can display hidden parameters.
 
 
-##Use
+##Use case
 After the plugin is installed,in job configuration's page,you can see Hidden Parameter:<br>
 ![](https://github.com/wy-scm/hidden-parameter-plugin/raw/master/images/JobConfiguration1.png)
 
