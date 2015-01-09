@@ -12,13 +12,13 @@ hidden-parameter-plugin
 After the plugin is installed,in job configuration's page,you can see Hidden Parameter:<br>
 ![](https://github.com/wy-scm/hidden-parameter-plugin/raw/master/images/JobConfiguration1.png)
 
-for example,you add a hidden parameter,is called svn_Root.<br>
+for example,you add a hidden parameter,is called hidden_para.<br>
 ![](https://github.com/wy-scm/hidden-parameter-plugin/raw/master/images/JobConfiguration2.png)
 
-click 'Build With Parameters' link ,the parameter svn_Root of the set before, is hide,don't display in this page. <br>
+click 'Build With Parameters' link ,the parameter hidden_para of the set before, is hide,don't display in this page. <br>
 ![](https://github.com/wy-scm/hidden-parameter-plugin/raw/master/images/JobConfiguration3.png)
 
-After the build , click 'Parameters' link, parameter list can display hidden parameters svn_Root.<br>
+After the build , click 'Parameters' link, parameter list can display hidden parameters hidden_para.<br>
 ![](https://github.com/wy-scm/hidden-parameter-plugin/raw/master/images/JobConfiguration4.png)
 
 
