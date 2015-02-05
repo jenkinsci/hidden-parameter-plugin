@@ -10,7 +10,7 @@
 
 	<artifactId>HiddenParameter</artifactId>
 	<packaging>hpi</packaging>	
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>Jenkins Hidden Parameter plugin</name>
     <url>http://wiki.jenkins-ci.org/display/JENKINS/Hidden+Parameter+Plugin</url>
     
