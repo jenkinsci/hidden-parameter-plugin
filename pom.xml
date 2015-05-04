@@ -8,10 +8,10 @@
 		<version>1.541</version>
 	</parent>
 
-	<artifactId>HiddenParameter</artifactId>
+	<artifactId>hidden-parameter</artifactId>
 	<packaging>hpi</packaging>	
-	<version>0.0.5-SNAPSHOT</version>
-	<name>Jenkins Hidden Parameter plugin</name>
+	<version>0.0.4-SNAPSHOT</version>
+	<name>Hidden Parameter plugin</name>
     <url>http://wiki.jenkins-ci.org/display/JENKINS/Hidden+Parameter+Plugin</url>
     
 	<organization>
