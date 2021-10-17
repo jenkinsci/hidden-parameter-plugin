@@ -10,13 +10,13 @@ import hudson.model.StringParameterValue;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 /**
-* @author wy-scm wy-scm@jd.com
-*/
+ * @author wy-scm wy-scm@jd.com
+ */
 public class WHideParameterValue extends StringParameterValue {
 
-	private static final long serialVersionUID = 6926027508686211675L;
+    private static final long serialVersionUID = 6926027508686211675L;
 
-	@DataBoundConstructor
+    @DataBoundConstructor
     public WHideParameterValue(String name, String value) {
         super(name, value);
     }
