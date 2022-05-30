@@ -11,8 +11,8 @@ import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
 /**
- * @author wy-scm <wy-scm@jd.com>
- * 
+ * @author wy-scm wy-scm@jd.com
+ *
  */
 public class WHideParameterDefinition extends ParameterDefinition {
 
@@ -26,13 +26,13 @@ public class WHideParameterDefinition extends ParameterDefinition {
 	public void setDefaultValue(String defaultValue) {
 		this.defaultValue = defaultValue;
 	}
- 
+
     @DataBoundConstructor
 	public WHideParameterDefinition(String name,String defaultValue, String description) {
 		super(name, description);
 		this.defaultValue = defaultValue;
 	}
- 
+
     @Extension
 	public static class DescriptorImpl extends ParameterDescriptor {
         @Override
@@ -57,7 +57,7 @@ public class WHideParameterDefinition extends ParameterDefinition {
             throw new IllegalArgumentException("Illegal number of parameter values for " + getName() + ": " + value.length);
         } else {
             return new WHideParameterValue(getName(), value[0], getDescription());
-        } 
+        }
 	}
 
 
@@ -67,10 +67,7 @@ public class WHideParameterDefinition extends ParameterDefinition {
 		return value;
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) { 
+	public static void main(String[] args) {
 
 	}
 

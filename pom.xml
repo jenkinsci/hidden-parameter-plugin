@@ -1,31 +1,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
-	
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>1.541</version>
-	</parent>
+		<version>4.10</version>
+		<relativePath />
+	  </parent>
+
+	<properties>
+		<jenkins.version>2.222.1</jenkins.version>
+		<java.level>8</java.level>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 
 	<artifactId>hidden-parameter</artifactId>
-	<packaging>hpi</packaging>	
+	<packaging>hpi</packaging>
 	<version>0.0.5-SNAPSHOT</version>
 	<name>Hidden Parameter plugin</name>
     <url>http://wiki.jenkins-ci.org/display/JENKINS/Hidden+Parameter+Plugin</url>
-    
+
 	<organization>
 		<name>wangyin</name>
 		<url>www.wangyin.com</url>
 	</organization>
-	
+
 	 <developers>
       <developer>
           <id>wy-scm</id>
           <name>wy-scm</name>
       </developer>
     </developers>
-
 
 	<build>
 		<plugins>
@@ -45,12 +51,12 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<scm>
         <connection>scm:git:git://github.com/jenkinsci/hidden-parameter-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/hidden-parameter-plugin.git</developerConnection>
     </scm>
-	
+
 	<repositories>
 		<repository>
 			<id>repo.jenkins-ci.org</id>
@@ -64,9 +70,5 @@
 			<url>https://repo.jenkins-ci.org/public/</url>
 		</pluginRepository>
 	</pluginRepositories>
-	
-	<properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
+
 </project>
