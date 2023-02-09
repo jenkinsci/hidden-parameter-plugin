@@ -1,0 +1,25 @@
+# Maven build files
+target/
+
+# Jenkins plugin development
+work/
+
+# IntelliJ project files
+*.iml
+*.ipr
+*.iws
+.idea/*
+!.idea/codeStyles/
+
+# Ignore generated files.
+.project
+.classpath
+.settings
+.factorypath
+*/.classpath
+*/.factorypath
+*/.project
+*/.settings
+
+# Backup file from pom parent updates
+pom.xml.versionsBackup
