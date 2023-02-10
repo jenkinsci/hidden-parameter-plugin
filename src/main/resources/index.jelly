@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+This plugin adds support for hidden parameter. After the plugin is installed, in job configuration's page,you can see hidden parameter.
+</div>
