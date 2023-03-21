@@ -1,9 +1,9 @@
 # Hidden Parameter Plugin
 
-[![Build Status](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/master/badge/icon)](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/master/)
+[![Build Status](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/main/badge/icon)](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/main/)
 [![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/hidden-parameter.svg)](https://plugins.jenkins.io/hidden-parameter)
 [![GitHub release](https://img.shields.io/github/release/jenkinsci/hidden-parameter-plugin.svg?label=changelog)](https://github.com/jenkinsci/hidden-parameter-plugin/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/jenkinsci/hidden-parameter-plugin)](https://github.com/jenkinsci/hidden-parameter-plugin/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/jenkinsci/hidden-parameter-plugin)](https://github.com/jenkinsci/hidden-parameter-plugin/blob/main/LICENSE)
 [![Jenkins Plugin Installs](https://img.shields.io/jenkins/plugin/i/hidden-parameter.svg?color=blue)](https://plugins.jenkins.io/hidden-parameter)
 
 Provide `hidden` parameter to Jenkins Jobs. Similar to `string` parameter but not displayed on the UI when triggering the jobs. 
