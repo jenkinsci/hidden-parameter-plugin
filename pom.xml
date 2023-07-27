@@ -16,7 +16,7 @@
     <properties>
       <gitHubRepo>jenkinsci/hidden-parameter-plugin</gitHubRepo>
       <changelist>999999-SNAPSHOT</changelist>
-      <jenkins.version>2.387.3</jenkins.version>
+      <jenkins.version>2.401.3</jenkins.version>
       <spotbugs.effort>Max</spotbugs.effort>
       <spotbugs.failOnError>true</spotbugs.failOnError>
       <spotbugs.threshold>Low</spotbugs.threshold>
@@ -28,7 +28,7 @@
         <dependencies>
           <dependency>
             <groupId>io.jenkins.tools.bom</groupId>
-            <artifactId>bom-2.387.x</artifactId>
+            <artifactId>bom-2.401.x</artifactId>
             <version>2258.v522c10b_d4695</version>
             <type>pom</type>
             <scope>import</scope>
