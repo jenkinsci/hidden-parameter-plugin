@@ -1,21 +1,13 @@
-/**
- * Hidden Parameter Definition
- */
 package com.wangyin.parameter;
-
-import org.jenkinsci.Symbol;
-import org.kohsuke.stapler.DataBoundConstructor;
-import org.kohsuke.stapler.StaplerRequest;
 
 import hudson.Extension;
 import hudson.model.ParameterDefinition;
 import hudson.model.ParameterValue;
 import net.sf.json.JSONObject;
+import org.jenkinsci.Symbol;
+import org.kohsuke.stapler.DataBoundConstructor;
+import org.kohsuke.stapler.StaplerRequest;
 
-/**
- * @author wy-scm wy-scm@jd.com
- *
- */
 public class WHideParameterDefinition extends ParameterDefinition {
 
     private static final long serialVersionUID = 8296806777255584941L;
@@ -37,7 +29,7 @@ public class WHideParameterDefinition extends ParameterDefinition {
     }
 
     @Extension
-    @Symbol({ "hidden", "hiddenParam" })
+    @Symbol({"hidden", "hiddenParam"})
     public static class DescriptorImpl extends ParameterDescriptor {
         @Override
         public String getDisplayName() {

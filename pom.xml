@@ -1,59 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.jenkins-ci.plugins</groupId>
-        <artifactId>plugin</artifactId>
-        <version>4.76</version>
-    </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>4.76</version>
+  </parent>
 
-    <artifactId>hidden-parameter</artifactId>
-    <packaging>hpi</packaging>
-    <version>${changelist}</version>
-    <name>Hidden Parameter plugin</name>
+  <artifactId>hidden-parameter</artifactId>
+  <version>${changelist}</version>
+  <packaging>hpi</packaging>
+  <name>Hidden Parameter plugin</name>
+  <url>https://github.com/${gitHubRepo}</url>
+
+  <scm>
+    <connection>scm:git:https://github.com/${gitHubRepo}.git</connection>
+    <developerConnection>scm:git:https@github.com:${gitHubRepo}.git</developerConnection>
+    <tag>${scmTag}</tag>
     <url>https://github.com/${gitHubRepo}</url>
+  </scm>
 
-    <properties>
-      <gitHubRepo>jenkinsci/hidden-parameter-plugin</gitHubRepo>
-      <changelist>999999-SNAPSHOT</changelist>
-      <jenkins.version>2.426.2</jenkins.version>
-      <spotbugs.effort>Max</spotbugs.effort>
-      <spotbugs.failOnError>true</spotbugs.failOnError>
-      <spotbugs.threshold>Low</spotbugs.threshold>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
+  <properties>
+    <gitHubRepo>jenkinsci/hidden-parameter-plugin</gitHubRepo>
+    <changelist>999999-SNAPSHOT</changelist>
+    <jenkins.version>2.426.2</jenkins.version>
+    <spotbugs.effort>Max</spotbugs.effort>
+    <spotbugs.failOnError>true</spotbugs.failOnError>
+    <spotbugs.threshold>Low</spotbugs.threshold>
+    <spotless.check.skip>false</spotless.check.skip>
+  </properties>
 
-    <dependencyManagement>
-        <dependencies>
-          <dependency>
-            <groupId>io.jenkins.tools.bom</groupId>
-            <artifactId>bom-2.426.x</artifactId>
-            <version>2675.v1515e14da_7a_6</version>
-            <type>pom</type>
-            <scope>import</scope>
-          </dependency>
-        </dependencies>
-      </dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-2.426.x</artifactId>
+        <version>2675.v1515e14da_7a_6</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-    <scm>
-        <connection>scm:git:https://github.com/${gitHubRepo}.git</connection>
-        <developerConnection>scm:git:https@github.com:${gitHubRepo}.git</developerConnection>
-        <url>https://github.com/${gitHubRepo}</url>
-         <tag>${scmTag}</tag>
-    </scm>
+  <dependencies>
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-cps</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-job</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-step-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkinsci.plugins</groupId>
+      <artifactId>pipeline-model-definition</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
-    <repositories>
-        <repository>
-            <id>repo.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public/</url>
-        </repository>
-    </repositories>
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>repo.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public/</url>
-        </pluginRepository>
-    </pluginRepositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
