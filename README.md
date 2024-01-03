@@ -1,6 +1,8 @@
 # Hidden Parameter Plugin
 
 [![Build Status](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/main/badge/icon)](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/main/)
+[![Coverage](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/main/badge/icon?status=${instructionCoverage}&subject=coverage&color=${colorInstructionCoverage})](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/main)
+[![LOC](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/main/badge/icon?job=test&status=${lineOfCode}&subject=line%20of%20code&color=blue)](https://ci.jenkins.io/job/Plugins/job/hidden-parameter-plugin/job/main)
 [![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/hidden-parameter.svg)](https://plugins.jenkins.io/hidden-parameter)
 [![GitHub release](https://img.shields.io/github/release/jenkinsci/hidden-parameter-plugin.svg?label=changelog)](https://github.com/jenkinsci/hidden-parameter-plugin/releases/latest)
 [![GitHub license](https://img.shields.io/github/license/jenkinsci/hidden-parameter-plugin)](https://github.com/jenkinsci/hidden-parameter-plugin/blob/main/LICENSE)
