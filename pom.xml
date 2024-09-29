@@ -6,6 +6,7 @@
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
     <version>4.88</version>
+    <relativePath />
   </parent>
 
   <artifactId>hidden-parameter</artifactId>
