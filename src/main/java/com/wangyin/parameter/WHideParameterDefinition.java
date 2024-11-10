@@ -3,6 +3,7 @@ package com.wangyin.parameter;
 import hudson.Extension;
 import hudson.model.ParameterDefinition;
 import hudson.model.ParameterValue;
+import java.io.Serial;
 import net.sf.json.JSONObject;
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -10,7 +11,9 @@ import org.kohsuke.stapler.StaplerRequest2;
 
 public class WHideParameterDefinition extends ParameterDefinition {
 
+    @Serial
     private static final long serialVersionUID = 8296806777255584941L;
+
     private String defaultValue;
 
     public String getDefaultValue() {

@@ -1,10 +1,12 @@
 package com.wangyin.parameter;
 
 import hudson.model.StringParameterValue;
+import java.io.Serial;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 public class WHideParameterValue extends StringParameterValue {
 
+    @Serial
     private static final long serialVersionUID = 6926027508686211675L;
 
     @DataBoundConstructor
