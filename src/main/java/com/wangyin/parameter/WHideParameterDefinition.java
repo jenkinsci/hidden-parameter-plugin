@@ -6,7 +6,7 @@ import hudson.model.ParameterValue;
 import net.sf.json.JSONObject;
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerRequest2;
 
 public class WHideParameterDefinition extends ParameterDefinition {
 
@@ -43,7 +43,7 @@ public class WHideParameterDefinition extends ParameterDefinition {
         return v;
     }
 
-    public ParameterValue createValue(StaplerRequest req) {
+    public ParameterValue createValue(StaplerRequest2 req) {
         String[] value = req.getParameterValues(getName());
         if (value == null) {
             return getDefaultParameterValue();
@@ -55,7 +55,7 @@ public class WHideParameterDefinition extends ParameterDefinition {
         }
     }
 
-    public ParameterValue createValue(StaplerRequest req, JSONObject jo) {
+    public ParameterValue createValue(StaplerRequest2 req, JSONObject jo) {
         WHideParameterValue value = req.bindJSON(WHideParameterValue.class, jo);
         value.setDescription(getDescription());
         return value;
