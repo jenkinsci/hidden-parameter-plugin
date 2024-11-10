@@ -23,7 +23,7 @@ import org.jenkinsci.plugins.workflow.job.WorkflowRun;
 import org.junit.jupiter.api.Test;
 import org.jvnet.hudson.test.JenkinsRule;
 import org.jvnet.hudson.test.junit.jupiter.WithJenkins;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerRequest2;
 
 @WithJenkins
 public class WHideParameterDefinitionTest {
@@ -47,18 +47,18 @@ public class WHideParameterDefinitionTest {
 
         // Without JSON and not value
         assertThat(
-                param.createValue(mock(StaplerRequest.class)),
+                param.createValue(mock(StaplerRequest2.class)),
                 is(new WHideParameterValue("MY_HIDDEN_PARAMETER", defaultValue, "my hidden value")));
 
         // Without JSON and with value
-        StaplerRequest req = mock(StaplerRequest.class);
+        StaplerRequest2 req = mock(StaplerRequest2.class);
         doReturn(new String[] {"the new value"}).when(req).getParameterValues("MY_HIDDEN_PARAMETER");
         assertThat(
                 param.createValue(req),
                 is(new WHideParameterValue("MY_HIDDEN_PARAMETER", "the new value", "my hidden value")));
 
         // With illegal number of value
-        req = mock(StaplerRequest.class);
+        req = mock(StaplerRequest2.class);
         doReturn(new String[] {"the new value", "the new value"}).when(req).getParameterValues("MY_HIDDEN_PARAMETER");
         try {
             param.createValue(req);
@@ -68,7 +68,7 @@ public class WHideParameterDefinitionTest {
 
         // With JSON
         JSONObject json = mock(JSONObject.class);
-        req = mock(StaplerRequest.class);
+        req = mock(StaplerRequest2.class);
         WHideParameterValue expectedValue = new WHideParameterValue("the name", "the value");
         doReturn(expectedValue).when(req).bindJSON(WHideParameterValue.class, json);
         assertThat(param.createValue(req, json), is(new WHideParameterValue("the name", "the value", "the value")));
