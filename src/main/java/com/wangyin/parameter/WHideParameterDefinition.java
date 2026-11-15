@@ -26,9 +26,8 @@ public class WHideParameterDefinition extends ParameterDefinition {
 
     @DataBoundConstructor
     public WHideParameterDefinition(String name, String defaultValue, String description) {
-        super(name);
+        super(name, description);
         this.defaultValue = defaultValue;
-        setDescription(description);
     }
 
     @Extension
