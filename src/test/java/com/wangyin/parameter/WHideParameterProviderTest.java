@@ -23,6 +23,7 @@
  */
 package com.wangyin.parameter;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -34,9 +35,13 @@ import hudson.model.FreeStyleProject;
 import hudson.model.ParameterValue;
 import hudson.model.ParametersAction;
 import hudson.model.ParametersDefinitionProperty;
+import hudson.model.StringParameterDefinition;
+import hudson.model.StringParameterValue;
 import java.util.List;
 import org.htmlunit.WebClient;
+import org.htmlunit.html.HtmlElement;
 import org.htmlunit.html.HtmlForm;
+import org.htmlunit.html.HtmlInput;
 import org.htmlunit.html.HtmlPage;
 import org.junit.jupiter.api.Test;
 import org.jvnet.hudson.test.JenkinsRule;
@@ -53,13 +58,16 @@ public class WHideParameterProviderTest {
         WHideParameterDefinition param =
                 new WHideParameterDefinition("MY_HIDDEN_PARAMETER", defaultValue, "my hidden value");
         FreeStyleProject job = jenkins.createProject(FreeStyleProject.class, "test-project");
-        job.addProperty(new ParametersDefinitionProperty(param));
+        job.addProperty(new ParametersDefinitionProperty(
+                param, new StringParameterDefinition("VISIBLE_PARAMETER", "visible-default")));
 
+        String previousValue = "value-from-run <&\"'>";
         FreeStyleBuild build1 = job.scheduleBuild2(
                         0,
                         new Cause.UserIdCause(),
-                        List.of(new ParametersAction(new WHideParameterValue(
-                                "MY_HIDDEN_PARAMETER", "value-from-run", "description-from-run"))))
+                        List.of(new ParametersAction(
+                                new WHideParameterValue("MY_HIDDEN_PARAMETER", previousValue, "description-from-run"),
+                                new StringParameterValue("VISIBLE_PARAMETER", "visible-from-run"))))
                 .get();
         jenkins.assertBuildStatusSuccess(build1);
 
@@ -69,6 +77,15 @@ public class WHideParameterProviderTest {
                     + build1.getUrl()
                     + build1.getAction(RebuildAction.class).getTaskUrl());
             HtmlForm form = page.getFormByName("config");
+            assertThat(page.asNormalizedText(), not(containsString("MY_HIDDEN_PARAMETER")));
+            assertThat(page.asNormalizedText(), not(containsString(previousValue)));
+            assertThat(page.asNormalizedText(), not(containsString("description-from-run")));
+            assertThat(page.asNormalizedText(), containsString("VISIBLE_PARAMETER"));
+            HtmlElement parameter = form.getFirstByXPath(
+                    ".//div[@name='parameter' and input[@name='name' and @value='MY_HIDDEN_PARAMETER']]");
+            HtmlInput value = parameter.getFirstByXPath("./input[@name='value']");
+            assertThat(value.getTypeAttribute(), is("hidden"));
+            assertThat(value.getValueAttribute(), is(previousValue));
             jenkins.submit(form);
 
             jenkins.waitUntilNoActivity();
@@ -81,6 +98,6 @@ public class WHideParameterProviderTest {
                 .findFirst()
                 .orElseThrow(AssertionError::new);
         assertThat(parameterValueBuild2.getName(), is("MY_HIDDEN_PARAMETER"));
-        assertThat(parameterValueBuild2.getValue(), is("value-from-run"));
+        assertThat(parameterValueBuild2.getValue(), is(previousValue));
     }
 }
